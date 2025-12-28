@@ -5,6 +5,7 @@ if ( ! current_user_can( 'manage_options' ) ) {
 	return;
 }
 
+// check if we are updating settings
 if (isset($_POST)) {
 	
 	if (isset($_POST['api_key'])) {
@@ -21,6 +22,7 @@ if (isset($_POST)) {
 	}
 }
 
+// read values from db
 $api_key = get_option('laposta_campaigns_api_key', 'put your api key here');
 $selected_lists = explode(",", get_option('laposta_campaigns_selected_lists'));
 
